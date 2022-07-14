@@ -3,6 +3,30 @@ variable "name" {
   type        = string
 }
 
+variable "enable_waf_fail_open" {
+  description = "Indicates whether to route requests to targets if lb fails to forward the request to AWS WAF"
+  type        = bool
+  default     = false
+}
+
+variable "desync_mitigation_mode" {
+  description = "Determines how the load balancer handles requests that might pose a security risk to an application due to HTTP desync."
+  type        = string
+  default     = "defensive"
+}
+
+variable "access_logs" {
+  description = "Map containing access logging configuration for load balancer."
+  type        = map(string)
+  default     = {}
+}
+
+variable "drop_invalid_header_fields" {
+  description = "Indicates whether invalid header fields are dropped in application load balancers. Defaults to false."
+  type        = bool
+  default     = false
+}
+
 variable "enable_deletion_protection" {
   description = "If true, deletion of the load balancer will be disabled via the AWS API. This will prevent Terraform from deleting the load balancer. Defaults to false."
   type        = bool

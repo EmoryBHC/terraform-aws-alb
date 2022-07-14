@@ -1,6 +1,5 @@
 
 resource "aws_lb" "this" {
-  count = local.create_lb ? 1 : 0
 
   name        = var.name
 
@@ -42,9 +41,8 @@ resource "aws_lb" "this" {
 
   tags = merge(
     var.tags,
-    var.lb_tags,
     {
-      Name = var.name != null ? var.name : var.name_prefix
+      Name = var.name != null 
     },
   )
 
