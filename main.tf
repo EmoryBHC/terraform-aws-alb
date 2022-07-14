@@ -3,7 +3,6 @@ resource "aws_lb" "this" {
   count = local.create_lb ? 1 : 0
 
   name        = var.name
-  name_prefix = var.name_prefix
 
   load_balancer_type = "application"
   internal           = var.internal
