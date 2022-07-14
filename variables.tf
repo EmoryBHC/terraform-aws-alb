@@ -37,19 +37,16 @@ variable "tags" {
 variable "security_groups" {
   description = "The security groups to attach to the load balancer. e.g. [\"sg-edcd9784\",\"sg-edcd9785\"]"
   type        = list(string)
-  default     = []
 }
 
 variable "vpc_id" {
   description = "VPC id where the load balancer and other resources will be deployed."
   type        = string
-  default     = null
 }
 
 variable "subnets" {
   description = "A list of subnets to associate with the load balancer. e.g. ['subnet-1a2b3c4d','subnet-1a2b3c4e','subnet-1a2b3c4f']"
   type        = list(string)
-  default     = null
 }
 
 variable "subnet_mapping" {
