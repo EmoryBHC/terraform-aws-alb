@@ -1,20 +1,4 @@
 
-resource "aws_security_group" "private_alb" {
-  name   = var.name
-  vpc_id = data.aws_vpc.default.id
-
-  ingress {
-  }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-}
-
-
 resource "aws_lb" "this" {
 
   name        = var.name
