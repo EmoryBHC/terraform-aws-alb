@@ -1,4 +1,4 @@
-# terraform-aws-alb
+# terraform-aws-lb
 Terraform module used to create an AWS Application Load Balancer
 
 <!-- BEGIN_TF_DOCS -->
