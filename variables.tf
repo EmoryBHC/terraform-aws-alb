@@ -3,6 +3,12 @@ variable "name" {
   type        = string
 }
 
+variable "load_balancer_type" {
+  description = "Type of load balancer being deployed. 'application' || 'network'"
+  type        = string
+  default     = "application"  
+}
+
 variable "enable_waf_fail_open" {
   description = "Indicates whether to route requests to targets if lb fails to forward the request to AWS WAF"
   type        = bool
